@@ -21,3 +21,6 @@ class MaxBinaryHeap2 {
     }
   }
 }
+
+heap = new MaxBinaryHeap2()
+heap.insert(3)
