@@ -1,6 +1,6 @@
 class MaxBinaryHeap2 {
   constructor() {
-    this.values = []
+    this.values = [6, 5, 3, 4]
   }
 
   insert(ele) {
@@ -9,18 +9,18 @@ class MaxBinaryHeap2 {
   }
 
   bubbleUp() {
-    let idx = this.values.length - 1;
-    const element = this.values[idx];
-    while (idx > 0) {
-      let parentIdx = Math.floor((idx - 1)/2);
-      let parent = this.values[parentIdx];
-      if (element <= parent) break;
-      this.values[parentIdx] = element;
-      this.values[idx] = parent;
-      idx = parentIdx;
+    let childIdx = this.values.length - 1;
+    while (childIdx > 0) {
+      let parentIdx = Math.floor((childIdx - 1)/2);
+      if (this.values[childIdx] <= this.values[parentIdx]) break;
+      this.swap(parentIdx, childIdx)
+      childIdx = parentIdx;
     }
+  }
+  swap(parentIdx, childIdx){
+    return [this.values[parentIdx], this.values[childIdx]] = [this.values[childIdx], this.values[parentIdx]]
   }
 }
 
 heap = new MaxBinaryHeap2()
-heap.insert(3)
+heap.insert(7)
