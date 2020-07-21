@@ -17,7 +17,8 @@ function bubbleUp(arr, childIndex) {
 }
 
 function swap(arr, parentIndex, childIndex) {
-  return [arr[parentIndex], arr[childIndex]] = [arr[childIndex], arr[parentIndex]]
+  [arr[parentIndex], arr[childIndex]] = [arr[childIndex], arr[parentIndex]]
+  return arr
 }
 
 insert([6, 4, 2], 1)
