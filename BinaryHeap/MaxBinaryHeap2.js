@@ -17,8 +17,8 @@ class MaxBinaryHeap2 {
       childIdx = parentIdx;
     }
   }
-  swap(parentIdx, childIdx){
-    return [this.values[parentIdx], this.values[childIdx]] = [this.values[childIdx], this.values[parentIdx]]
+  swap(idxToBeSwapped, idx){
+    return [this.values[idxToBeSwapped], this.values[idx]] = [this.values[idx], this.values[idxToBeSwapped]]
   }
 }
 
