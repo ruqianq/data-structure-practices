@@ -1,4 +1,4 @@
-class MaxBinaryHeap2 {
+class MaxBinaryHeap {
   constructor() {
     this.values = [6, 5, 3, 4]
   }
@@ -20,7 +20,13 @@ class MaxBinaryHeap2 {
   swap(idxToBeSwapped, idx){
     [this.values[idxToBeSwapped], this.values[idx]] = [this.values[idx], this.values[idxToBeSwapped]]
   }
+
+  extractMax() {
+    const max = this.values[0]
+    this.values.pop()
+    return max
+  }
 }
 
-heap = new MaxBinaryHeap2()
+heap = new MaxBinaryHeap()
 heap.insert(7)
