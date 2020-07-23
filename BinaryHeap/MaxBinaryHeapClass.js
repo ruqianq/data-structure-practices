@@ -23,8 +23,36 @@ class MaxBinaryHeap {
 
   extractMax() {
     const max = this.values[0]
-    this.values.pop()
+    this.values[0] = this.values.pop()
+    this.sinkDown();
     return max
+  }
+  sinkDown() {
+    let idx = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+    while(true) {
+      let leftChildIdx = 2 * idx + 1;
+      let rightChildIdx = 2 * idx + 2;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIdx < length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild > element) {
+          swap = leftChildIdx
+        }
+      }
+      if (rightChildIdx < length) {
+        rightChild = this.values[leftChildIdx];
+        if ((swap===null && rightChild > element) || (swap !== null && rightChild > leftChild)){
+          swap = rightChildIdx
+        }
+      }
+      if (swap === null) break;
+      this.swap(swap, idx)
+      idx = swap
+    }
   }
 }
 
