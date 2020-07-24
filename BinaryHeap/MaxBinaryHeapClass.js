@@ -1,6 +1,6 @@
 class MaxBinaryHeap {
   constructor() {
-    this.values = [6, 5, 3, 4]
+    this.values = []
   }
 
   insert(ele) {
@@ -23,8 +23,10 @@ class MaxBinaryHeap {
 
   extractMax() {
     const max = this.values[0]
-    this.values[0] = this.values.pop()
-    this.sinkDown();
+    if (this.values.length > 0) {
+      this.values[0] = this.values.pop()
+      this.sinkDown();
+    }
     return max
   }
   sinkDown() {
@@ -58,3 +60,7 @@ class MaxBinaryHeap {
 
 heap = new MaxBinaryHeap()
 heap.insert(7)
+heap.insert(5)
+heap.insert(3)
+heap.insert(1)
+heap.extractMax()
