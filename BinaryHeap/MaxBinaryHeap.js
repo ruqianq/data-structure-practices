@@ -16,8 +16,8 @@ function bubbleUp(arr, childIndex) {
   return arr
 }
 
-function swap(arr, parentIndex, childIndex) {
-  [arr[parentIndex], arr[childIndex]] = [arr[childIndex], arr[parentIndex]]
+function swap(arr, idxToSwapped, idx) {
+  [arr[idxToSwapped], arr[idx]] = [arr[idx], arr[idxToSwapped]]
   return arr
 }
 
@@ -29,22 +29,25 @@ function extractMax(arr) {
 }
 
 function adjust(arr, idx) {
-
+  const element = arr[0]
   let leftIdx = idx * 2 + 1
   let rightIdx = idx * 2 + 2
-
-  while(idx < arr.length - 1) {
-    if (arr[rightIdx] > arr[leftIdx]) {
-      if (arr[idx] > arr[rightIdx]) break;
-      arr = swap(arr, rightIdx, idx)
-      idx = rightIdx
-    } else {
-      if (arr[idx] > arr[leftIdx]) break;
-      arr = swap(arr, leftIdx, idx)
-      idx = leftIdx
+  let idxToSwap, leftChild, rightChild
+  if (leftIdx < arr.length) {
+    leftChild = arr[leftIdx]
+    if (leftChild > element) {
+      idxToSwap = leftIdx
     }
   }
-  return arr
+  if (rightIdx < arr.length) {
+    rightChild = arr[rightIdx]
+    if ((!idxToSwap && rightChild > element) || (idxToSwap && rightChild > leftChild)) {
+      idxToSwap = rightIdx
+    }
+  }
+  if (!idxToSwap) return;
+  swap(arr, idx, idxToSwap)
+  adjust(arr.slice(idxToSwap, 0))
 }
 
 insert([6, 4, 2], 1)
