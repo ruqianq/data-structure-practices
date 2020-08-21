@@ -1,3 +1,5 @@
+// Check the two strings have sequential characters
+
 function isSubsequence(str1, str2) {
     // create two array
     let strArr1 = str1.split("");
