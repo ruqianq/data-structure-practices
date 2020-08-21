@@ -9,7 +9,7 @@ function averagePair(arr, num){
     while (first < next) {
         if ((arr[first] + arr[next]) === num*2) {
             return true;
-        } else if (arr[first] + arr[next]) < num*2) {
+        } else if ((arr[first] + arr[next]) < num*2) {
             first++;
         } else {
             next--;
@@ -17,4 +17,5 @@ function averagePair(arr, num){
     }
     return false;
 }
+
 averagePair([1,3,3,5,6,7,10,12,19], 8)
