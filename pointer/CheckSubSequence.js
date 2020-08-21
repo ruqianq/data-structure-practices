@@ -10,7 +10,7 @@ function isSubsequence(str1, str2) {
     let p2 = 0;
     // create a while loop for check the char in each string array
     while (p2 < strArr2.length && p1 <= strArr1.length - 1 ) {
-        if (strArr1[p1] == strArr2[p2]) {
+        if (strArr1[p1] === strArr2[p2]) {
             p1++
             if (p1 === strArr1.length - 1){
             return true
