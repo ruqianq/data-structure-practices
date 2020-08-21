@@ -1,10 +1,12 @@
+// To check the array has average of a pair of number can produce the given number
+
 function averagePair(arr, num){
     if (arr.length === 0) {
         return false;
     }
     // create two pointers, one is pointing the first ind and 2nd one is pointing the next one
     let first = 0;
-    let next = arr.length-1;
+    let next = arr.length - 1;
     // create a while loop to check the pair
     while (first < next) {
         if ((arr[first] + arr[next]) === num*2) {
