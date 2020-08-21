@@ -1,4 +1,4 @@
-// To check the array has average of a pair of number can produce the given number
+// To return two numbers in a sorted array has average of the given number
 
 function averagePair(arr, num){
     if (arr.length === 0) {
@@ -9,15 +9,23 @@ function averagePair(arr, num){
     let next = arr.length - 1;
     // create a while loop to check the pair
     while (first < next) {
-        if ((arr[first] + arr[next]) === num*2) {
-            return true;
-        } else if ((arr[first] + arr[next]) < num*2) {
-            first++;
-        } else {
-            next--;
-        }
+        if (foundAverage(arr[first], arr[next], num)) return [arr[first], arr[next]];
+        if (leftPointerMove(arr[first], arr[next], num)) first++;
+        if (rightPointerMove(arr[first], arr[next], num)) next--;
     }
     return false;
+}
+
+function foundAverage(first, next, average) {
+    return first + next === average * 2
+}
+
+function leftPointerMove(first, next, average) {
+    return first + next < average * 2
+}
+
+function rightPointerMove(first, next, average) {
+    return first + next > average * 2
 }
 
 averagePair([1,3,3,5,6,7,10,12,19], 8)
