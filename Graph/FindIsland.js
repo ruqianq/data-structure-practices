@@ -20,10 +20,10 @@ class Island {
     }
 
     this.graph[r][c] = "#"
-    this.dfs(r + 1, c, this.graph)
-    this.dfs(r - 1, c, this.graph)
-    this.dfs(r, c + 1, this.graph)
-    this.dfs(r, c - 1, this.graph)
+    this.dfs(r + 1, c)
+    this.dfs(r - 1, c)
+    this.dfs(r, c + 1)
+    this.dfs(r, c - 1)
   }
   count() {
     let result = 0;
