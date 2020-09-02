@@ -14,37 +14,18 @@ class Island {
     this.graph = graph;
   }
 
-  isSubGraph(r, c, visited) {
-    return r >= 0 && r < this.row && c >= 0 && c < this.col && !visited[r][c] && this.graph[r][c]
-  }
-
   dfs(r, c, visited) {
-    const rNeighbor = [-1, 0, 0, 1];
-    const cNeighbor = [0, -1, 1, 0];
-
-    visited[r][c] = true;
-
-    for ( let i = 0; i <= 4; i++ ) {
-      if (this.isSubGraph(r + rNeighbor[i], c + cNeighbor[i], visited)) {
-        this.dfs(r + rNeighbor[i], c + cNeighbor[i], visited)
-      }
+    if (r < 0 || c < 0 || r >= this.row || c >= this.col || this.graph[r][c] != 1) {
+      return null
     }
+
+    this.graph[c][r] = "#"
+    this.dfs(r + 1, c, this.graph)
+    this.dfs(r - 1, c, this.graph)
+    this.dfs(r, c + 1, this.graph)
+    this.dfs(r, c - 1, this.graph)
   }
-  count() {
-    let rowArr = new Array(this.row)
-    let colArr = new Array(this.col).fill(false)
-    let visitedArr = rowArr.fill(colArr);
-    let result = 0;
-    for ( let i = 0; i <= this.row; i++ ) {
-      for (let j = 0; j <= this.col; j++ ) {
-        if (visitedArr[i][j] === false && this.graph[i][j] === 1) {
-          this.dfs(i, j, visitedArr)
-          result += 1
-        }
-      }
-    }
-    return result
-  }
+
 }
 
 const island = new Island(met.length, met[0].length, met)
