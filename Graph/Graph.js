@@ -52,6 +52,11 @@ class Graph {
     helper(start)
     return result
   }
+
+  bfs(start) {
+    const result = []
+    return result
+  }
 }
 
 g = new Graph()
