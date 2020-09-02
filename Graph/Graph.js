@@ -33,12 +33,22 @@ class Graph {
     }
     delete this.adjacencyList[vertex]
   }
+
   dfsRecurse(vertex) {
 
     const result = []
     const visited = {}
-    const helper = () => {
-
+    const helper = (vertexInput) => {
+      if (this.adjacencyList[vertexInput].length === 0) {
+        return
+      }
+      visited[vertexInput] = true
+      result.push(vertexInput)
+      for (let v of this.adjacencyList[vertexInput]) {
+        if (!visited[v]) {
+          helper(v)
+        }
+      }
     }
     helper(vertex)
     return result
