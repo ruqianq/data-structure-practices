@@ -34,13 +34,12 @@ class Graph {
     delete this.adjacencyList[vertex]
   }
 
-  dfsRecurse(vertex) {
-
-    const result = []
-    const visited = {}
+  dfsRecurse(start) {
+    const result = [];
+    const visited = {};
     const helper = (vertexInput) => {
-      if (this.adjacencyList[vertexInput].length === 0) {
-        return
+      if (!vertexInput) {
+        return null
       }
       visited[vertexInput] = true
       result.push(vertexInput)
@@ -50,7 +49,7 @@ class Graph {
         }
       }
     }
-    helper(vertex)
+    helper(start)
     return result
   }
 }
