@@ -15,7 +15,7 @@ function fib_memo(n, memo = []) {
   return res
 }
 
-// Use memoization to store the repeated sub problems
+// Use table to store the repeated sub problems
 function fib_table(n) {
   if (n <= 2) return 1;
   let fibNums = [0, 1, 1]
