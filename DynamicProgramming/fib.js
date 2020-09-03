@@ -1,16 +1,26 @@
 // Too slow!!!
-function oldFib(n) {
+function fib(n) {
   if (n <= 2) return 1;
-  return oldFib(n - 1) + oldFib( n - 2 )
+  return fib(n - 1) + fib( n - 2 )
 }
 
 // Use memoization to store the repeated sub problems
-function newFib(n, memo = []) {
+function fib_memo(n, memo = []) {
   if (memo[n]) {
     return memo[n]
   }
   if (n <= 2) return 1;
-  const res = newFib(n - 1, memo) + newFib( n - 2, memo)
+  const res = fib_memo(n - 1, memo) + fib_memo( n - 2, memo)
   memo[n] = res
   return res
+}
+
+// Use memoization to store the repeated sub problems
+function fib_table(n) {
+  if (n <= 2) return 1;
+  let fibNums = [0, 1, 1]
+  for (let i = 3; i <= n; i++) {
+    fibNums[i] = fibNums[i - 1] + fibNums[i - 2]
+  }
+  return fibNums[n]
 }
