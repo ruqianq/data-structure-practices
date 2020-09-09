@@ -1,4 +1,3 @@
-
 // Find duplicates from sorted array
 
 const testArray2 = [3, 3, 5, 6, 8, 8, 9, 10, 10];
