@@ -28,10 +28,3 @@ findHighLowInd(10, testArray)
 // return -1
 findHighLowInd(2, testArray)
 // return [3, 7]
-
-// function findHighLowInxBinarySearch(key, arr) {
-//
-//
-//   return []
-//
-// }
