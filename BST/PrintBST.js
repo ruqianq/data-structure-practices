@@ -1,8 +1,8 @@
-var printTree = function(root) {
+const printTree = function (root) {
     if (!root) return [];
     const level = findHeight(root);
-    const width = 2**level - 1;
-    
+    const width = 2 ** level - 1;
+
     // initialize result array
     let result = [];
     for (let i = 0; i < level; i++) {
