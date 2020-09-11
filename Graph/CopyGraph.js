@@ -30,6 +30,7 @@ class Graph {
       visited[vertexInput] = true
       newGraph.addVertex(vertexInput)
       for (let v of this.adjacencyList[vertexInput]) {
+        newGraph.addEdge(vertexInput, v)
         if (!visited[v]){
           newGraph.addVertex(v)
           newGraph.addEdge(vertexInput, v)
@@ -42,21 +43,28 @@ class Graph {
   }
 }
 
-// g = new Graph()
-// g.addVertex("A")
-// g.addVertex("B")
-// g.addVertex("C")
-// g.addVertex("D")
-// g.addVertex("E")
-// g.addVertex("F")
-//
-// g.addEdge("A", "B")
-// g.addEdge("A", "C")
-// g.addEdge("B", "D")
-// g.addEdge("C", "E")
-// g.addEdge("D", "E")
-// g.addEdge("D", "F")
-// g.addEdge("E", "F")
+function buildUndirectGraph() {
+  g = new Graph()
+  g.addVertex("A")
+  g.addVertex("B")
+  g.addVertex("C")
+  g.addVertex("D")
+  g.addVertex("E")
+  g.addVertex("F")
+
+  g.addEdge("A", "B")
+  g.addEdge("A", "C")
+  g.addEdge("B", "D")
+  g.addEdge("C", "E")
+  g.addEdge("D", "E")
+  g.addEdge("D", "F")
+  g.addEdge("E", "F")
+  return g
+}
+
+g = buildUndirectGraph()
+newG = g.copy()
+
 
 
 
