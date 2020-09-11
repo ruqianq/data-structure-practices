@@ -1,4 +1,4 @@
-class Node {
+export class Node {
     constructor(val) {
         this.value = val;
         this.left = null;
@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-class BinerySearchTree {
+export class BinarySearchTree {
     constructor() {
         this.root = null
     }
@@ -115,7 +115,7 @@ class BinerySearchTree {
     }
 }
 
-let test = new BinerySearchTree()
+let test = new BinarySearchTree()
 test.insert(10)
 test.insert(15)
 test.insert(6)
