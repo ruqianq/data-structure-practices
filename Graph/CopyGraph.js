@@ -18,11 +18,27 @@ class Graph {
   }
 }
 
+// g = new Graph()
+// g.addVertex("A")
+// g.addVertex("B")
+// g.addVertex("C")
+// g.addVertex("D")
+// g.addVertex("E")
+// g.addVertex("F")
+//
+// g.addEdge("A", "B")
+// g.addEdge("A", "C")
+// g.addEdge("B", "D")
+// g.addEdge("C", "E")
+// g.addEdge("D", "E")
+// g.addEdge("D", "F")
+// g.addEdge("E", "F")
+
 function copy(root) {
   let newGraph = new Graph()
   let visited = {}
   const helper = (vertexInput) => {
-    if (vertexInput) {
+    if (!vertexInput) {
       return null
     }
     visited[vertexInput] = true
