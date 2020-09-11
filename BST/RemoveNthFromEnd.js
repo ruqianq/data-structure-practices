@@ -19,7 +19,7 @@ const removeNthFromEnd = function (head, n) {
   }
   let nodeToRemove = head;
   let nodeToRemovePre = nodeToRemove
-  while (nodeToRemove.next && listLength != n) {
+  while (nodeToRemove.next && listLength !== n) {
     nodeToRemovePre = nodeToRemove
     nodeToRemove = nodeToRemove.next
     listLength--
