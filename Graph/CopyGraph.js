@@ -30,7 +30,6 @@ class Graph {
       visited[vertexInput] = true
       newGraph.addVertex(vertexInput)
       for (let v of this.adjacencyList[vertexInput]) {
-        newGraph.addEdge(vertexInput, v)
         if (!visited[v]){
           newGraph.addVertex(v)
           newGraph.addEdge(vertexInput, v)
@@ -43,7 +42,7 @@ class Graph {
   }
 }
 
-function buildUndirectGraph() {
+function buildDirectGraph() {
   g = new Graph()
   g.addVertex("A")
   g.addVertex("B")
@@ -62,7 +61,7 @@ function buildUndirectGraph() {
   return g
 }
 
-g = buildUndirectGraph()
+g = buildDirectGraph()
 newG = g.copy()
 
 
