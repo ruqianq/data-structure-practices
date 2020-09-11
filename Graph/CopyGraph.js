@@ -1,68 +1,33 @@
 // Given the root node of a directed graph, clone this graph by creating its deep copy so that the cloned graph has
 // the same vertices and edges as the original graph.
 
-class Graph {
-  constructor() {
-    this.adjacencyList = {}
-  }
+function Node(val, neighbors) {
+    this.val = val === undefined ? 0 : val;
+    this.neighbors = neighbors === undefined ? [] : neighbors;
+}
 
-  addVertex(vertex) {
-    if (!this.adjacencyList[vertex]) {
-      this.adjacencyList[vertex] = []
-    }
-  }
+const cloneGraph = (node) => {
+  let visited = {}
 
-  addEdge(vertex1, vertex2) {
-    this.adjacencyList[vertex1].push(vertex2)
-    this.adjacencyList[vertex2].push(vertex2)
-  }
-
-  copy(root) {
-    if (!root) {
+  let bfsHelper = (node) => {
+    if (!node) {
       return null
     }
-    let newGraph = new Graph()
-    let visited = {}
-    const helper = (vertexInput) => {
-      if (!vertexInput) {
-        return null
-      }
-      visited[vertexInput] = true
-      newGraph.addVertex(vertexInput)
-      for (let v of this.adjacencyList[vertexInput]) {
-        if (!visited[v]){
-          newGraph.addVertex(v)
-          newGraph.addEdge(vertexInput, v)
-          helper(v)
-        }
+
+    let root = new Node(node.val)
+    visited[node.val] = root
+    for (let n of node.neighbors){
+      if (!visited[n.val]) {
+        root.neighbors.push(n)
+        bfsHelper(n)
+      } else {
+        return visited[n.val]
       }
     }
-    helper(root)
-    return newGraph
+    return root
   }
+  return bfsHelper(node)
 }
-
-function buildDirectGraph() {
-  g = new Graph()
-  g.addVertex("A")
-  g.addVertex("B")
-  g.addVertex("C")
-  g.addVertex("D")
-  g.addVertex("E")
-  g.addVertex("F")
-
-  g.addEdge("A", "B")
-  g.addEdge("A", "C")
-  g.addEdge("B", "D")
-  g.addEdge("C", "E")
-  g.addEdge("D", "E")
-  g.addEdge("D", "F")
-  g.addEdge("E", "F")
-  return g
-}
-
-g = buildDirectGraph()
-newG = g.copy()
 
 
 
