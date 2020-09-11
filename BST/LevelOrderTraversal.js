@@ -12,7 +12,6 @@ test1.insert(20)
 test1.insert(3)
 test1.insert(13)
 test1.insert(7)
-test1.dfs_order()
 
 
 const levelOrderTraversal = (root) => {
