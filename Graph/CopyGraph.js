@@ -16,6 +16,30 @@ class Graph {
     this.adjacencyList[vertex1].push(vertex2)
     this.adjacencyList[vertex2].push(vertex2)
   }
+
+  copy(root) {
+    if (!root) {
+      return null
+    }
+    let newGraph = new Graph()
+    let visited = {}
+    const helper = (vertexInput) => {
+      if (!vertexInput) {
+        return null
+      }
+      visited[vertexInput] = true
+      newGraph.addVertex(vertexInput)
+      for (let v of this.adjacencyList[vertexInput]) {
+        if (!visited[v]){
+          newGraph.addVertex(v)
+          newGraph.addEdge(vertexInput, v)
+          helper(v)
+        }
+      }
+    }
+    helper(root)
+    return newGraph
+  }
 }
 
 // g = new Graph()
@@ -34,17 +58,7 @@ class Graph {
 // g.addEdge("D", "F")
 // g.addEdge("E", "F")
 
-function copy(root) {
-  let newGraph = new Graph()
-  let visited = {}
-  const helper = (vertexInput) => {
-    if (!vertexInput) {
-      return null
-    }
-    visited[vertexInput] = true
 
-  }
-}
 
 
 
