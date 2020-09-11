@@ -16,9 +16,17 @@ class Graph {
     this.adjacencyList[vertex1].push(vertex2)
     this.adjacencyList[vertex2].push(vertex2)
   }
+}
 
-  copy(root) {
-    let newGraph = new Graph()
+function copy(root) {
+  let newGraph = new Graph()
+  let visited = {}
+  const helper = (vertexInput) => {
+    if (vertexInput) {
+      return null
+    }
+    visited[vertexInput] = true
+
   }
 }
 
