@@ -15,17 +15,21 @@ class Island {
   }
 
   dfs(r, c) {
+    // Condition to verify the node
     if (r < 0 || c < 0 || r >= this.row || c >= this.col || this.graph[r][c] !== 1) {
       return
     }
-
+    // Alternative, we could make a hashmap to record the vistied node
     this.graph[r][c] = "#"
+    // Find the neighbor nodes
     this.dfs(r + 1, c)
     this.dfs(r - 1, c)
     this.dfs(r, c + 1)
     this.dfs(r, c - 1)
   }
+    // a nested loop to check through the nodes
   count() {
+    // counter
     let result = 0;
     for (let i = 0; i < this.row; i++) {
       for (let j = 0; j < this.row; j++) {
