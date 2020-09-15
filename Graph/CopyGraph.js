@@ -1,5 +1,16 @@
 // Given the root node of a undirected graph, clone this graph by creating its deep copy so that the cloned graph has
 // the same vertices and edges as the original graph.
+// Question from leetcode
+
+// Defind a node
+// Alternative could use class
+
+class NodeClass {
+    constructor(val = 0, neighbors = []) {
+        this.val = val;
+        this.neighbors = neighbors
+    }
+}
 
 function Node(val, neighbors) {
     this.val = val === undefined ? 0 : val;
