@@ -2,3 +2,16 @@
 // Given a coordinate (sr, sc) representing the starting pixel (row and column) of the flood fill, and a pixel value newColor, "flood fill" the image.
 // To perform a "flood fill", consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color as the starting pixel), and so on. Replace the color of all of the aforementioned pixels with the newColor.
 //At the end, return the modified image.
+
+const floodFill = function(image, sr, sc, newColor) {
+    // if (sr, sc) is out of the image return null
+    
+    // Find the val of the (sr, sc) point
+    
+    // Do the recursive function to find its neighbor
+    
+    // if it is === change the val to newColor
+    
+    // return new image
+    return
+};
