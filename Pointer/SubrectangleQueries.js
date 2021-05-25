@@ -38,6 +38,7 @@ class SubrectangleQueries {
                 pc ++
             }
             pr ++
+            pc = col1
         }
         return this.rectangle
     };
