@@ -25,13 +25,27 @@
 
 class SubrectangleQueries {
     constructor(rectangle) {
-        this.rows = rectangle[0].length
-        this.cols = rectangle.length
+        this.rows = rectangle.length
+        this.cols = rectangle[0].length
+        this.rectangle = rectangle
     }
     updateSubrectangle(row1, col1, row2, col2, newValue) {
-
-    }
+        let pr = row1;
+        let pc = col1;
+        while (pr <= row2) {
+            while (pc <= col2) {
+                this.rectangle[pr][pc] = newValue
+                pc ++
+            }
+            pr ++
+        }
+        return this.rectangle
+    };
 
     getValue(row, col) {
+        if (row < this.rows && col < this.cols) {
+            return this.rectangle[row][col]
+        }
+        return null
     }
 }
