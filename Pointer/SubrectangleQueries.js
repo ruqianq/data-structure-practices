@@ -28,4 +28,10 @@ class SubrectangleQueries {
         this.rows = rectangle[0].length
         this.cols = rectangle.length
     }
+    updateSubrectangle(row1, col1, row2, col2, newValue) {
+
+    }
+
+    getValue(row, col) {
+    }
 }
