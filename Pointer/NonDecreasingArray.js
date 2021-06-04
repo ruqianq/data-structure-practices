@@ -4,28 +4,16 @@
 // (0 <= i <= n - 2).
 
 /**
- * @param {number[]} nums
+ * @param {number[]} numbers
  * @return {boolean}
  */
 
 // Question: is the array sorted? no
 
-const checkPossibility = function(nums) {
-    let pIdx = 1;
-    let prevIdx = 0;
-    let countOfChange = 0
-    while (pIdx <= nums.length) {
-        if (nums[pIdx] < nums[prevIdx]) {
-            countOfChange ++
-        }
-        if (countOfChange > 2) {
-            return false
-        }
-        pIdx ++
-        prevIdx ++
-    }
-
-    return nums.length > 0;
+const checkPossibility = function(numbers) {
+    for (let i = 1, err = 0; i < numbers.length; i++)
+        if (numbers[i] < numbers[i-1])
+            if (err++ || (i > 1 && i < numbers.length - 1 && numbers[i-2] > numbers[i] && numbers[i+1] < numbers[i-1]))
+                return false
+    return true
 };
-
-// fail on [4, 2, 1]
