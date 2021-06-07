@@ -7,11 +7,18 @@
 // n consists of only digits.
 // n does not contain any leading zeros and represents a positive integer.
 
+// Question 1: can we have repeated number? yes
+// question 2: can we use math.max yes
+// Just for clarification, the spread operation for array of string if the string can not convert to number it will
+// receive NaN
+
 /**
  * @param {string} n
  * @return {number}
  */
-var minPartitions = function(n) {
 
+const minPartitions = function(n) {
+    const digits = n.split('')
+    return Math.max(...digits)
 };
 
