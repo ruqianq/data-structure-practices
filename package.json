@@ -1,0 +1,25 @@
+{
+  "name": "data-structure-practices",
+  "version": "1.0.0",
+  "description": "Here is the repo contains the algorithm and data structure practices scripts I used for preparing my tech interview.",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jest": "^27.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruqianq/data-structure-practices.git"
+  },
+  "author": "Daisy Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruqianq/data-structure-practices/issues"
+  },
+  "homepage": "https://github.com/ruqianq/data-structure-practices#readme"
+}
