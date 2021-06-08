@@ -19,16 +19,7 @@
 //     1 <= rj <= 500
 //     All coordinates are integers.
 
-/**
- * @param {number[][]} points
- * @param {number[][]} queries
- * @return {number[]}
- */
-const countPoints = function(points, queries) {
-    return []
-};
-
-const circleBoundaryCalculator = function (query) {
+export function circleBoundaryCalculator(query) {
     const xLeftmostPoint = query[0] - query[2]
     const xRightmostPoint = query[0] + query[2]
     const yTopPoint = query[1] + query[2]
@@ -36,5 +27,26 @@ const circleBoundaryCalculator = function (query) {
     return [xLeftmostPoint, xRightmostPoint, yTopPoint, yLowPoint]
 }
 
-module.exports.countPoints = countPoints;
-module.exports.circleBoundaryCalculator = circleBoundaryCalculator;
+export function pointIsInsideBoundary() {
+    return undefined;
+}
+
+/**
+ * @param {number[][]} points
+ * @param {number[][]} queries
+ * @return {number[]}
+ */
+export function countPoints(points, queries) {
+    let numberOfCircleCounts = []
+    let counter = 0
+    let pointIndex = 0
+    while (pointIndex < points.length) {
+        let queryIndex = 0
+        while (queryIndex < queries.length) {
+            let circleBoundary = circleBoundaryCalculator(queries[queryIndex])
+
+        }
+    }
+    return numberOfCircleCounts
+}
+
