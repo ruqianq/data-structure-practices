@@ -13,7 +13,8 @@
  * @param {number[][]} queries
  * @return {number[]}
  */
-const countPoints = function(points, queries) {
-    
+const countPoints = function() {
+    return true
 };
 
+module.exports = countPoints;
