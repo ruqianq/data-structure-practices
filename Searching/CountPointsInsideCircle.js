@@ -14,6 +14,6 @@
  * @return {number[]}
  */
 const countPoints = function(points, queries) {
-
+    
 };
 
