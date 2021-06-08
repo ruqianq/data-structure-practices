@@ -25,7 +25,16 @@
  * @return {number[]}
  */
 const countPoints = function(points, queries) {
-    return
+    return []
 };
 
-module.exports = countPoints;
+const circleBoundaryCalculator = function (query) {
+    const xLeftmostPoint = query[0] - query[2]
+    const xRightmostPoint = query[0] + query[2]
+    const yTopPoint = query[1] + query[2]
+    const yLowPoint = query[1] - query[2]
+    return [xLeftmostPoint, xRightmostPoint, yTopPoint, yLowPoint]
+}
+
+module.exports.countPoints = countPoints;
+module.exports.circleBoundaryCalculator = circleBoundaryCalculator;
