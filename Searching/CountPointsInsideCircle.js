@@ -8,13 +8,24 @@
 //
 // Return an array answer, where answer[j] is the answer to the jth query.
 
+// Constraints:
+//
+//     1 <= points.length <= 500
+//     points[i].length == 2
+//     0 <= xi, yi <= 500
+//     1 <= queries.length <= 500
+//     queries[j].length == 3
+//     0 <= xj, yj <= 500
+//     1 <= rj <= 500
+//     All coordinates are integers.
+
 /**
  * @param {number[][]} points
  * @param {number[][]} queries
  * @return {number[]}
  */
-const countPoints = function() {
-    return true
+const countPoints = function(points, queries) {
+    return
 };
 
 module.exports = countPoints;
