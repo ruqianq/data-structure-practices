@@ -5,6 +5,7 @@ test('Test circle boundary calculator', () => {
         .toEqual([-2, 4, 5, -1]);
 });
 
-test('Test the point is in the boundary', () => {
-    expect(CountPointsInsideCircle.pointIsInsideBoundary());
+test('Test the point out of boundary', () => {
+    expect(CountPointsInsideCircle.pointIsInsideBoundary([7, 8], [1, 2, 3]))
+        .toBe(false);
 });
