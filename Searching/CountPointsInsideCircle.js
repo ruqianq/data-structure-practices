@@ -32,7 +32,6 @@ const circleBoundaryCalculator = function (query) {
 const pointIsInsideCircle = function (point, query) {
     const boundaries = circleBoundaryCalculator(query)
     return !(point[0] > boundaries[1] || point[0] < boundaries[0] || point[1] > boundaries[2] || point < boundaries[3]);
-
 }
 
 /**
@@ -42,14 +41,18 @@ const pointIsInsideCircle = function (point, query) {
  */
 const countPoints = function(points, queries) {
     let numberOfCircleCounts = []
-    let counter = 0
     let pointIndex = 0
     while (pointIndex < points.length) {
         let queryIndex = 0
+        let counter = 0
         while (queryIndex < queries.length) {
-            let circleBoundary = circleBoundaryCalculator(queries[queryIndex])
-
+            if (pointIsInsideCircle(points[pointIndex], queries[queryIndex])) {
+                counter ++
+            }
+            queryIndex ++
         }
+        numberOfCircleCounts.push(counter)
+        pointIndex ++
     }
     return numberOfCircleCounts
 };
