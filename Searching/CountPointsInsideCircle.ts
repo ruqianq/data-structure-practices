@@ -1,5 +1,3 @@
-
-
 // You are given an array points where points[i] = [xi, yi] is the coordinates of the ith point on a 2D plane.
 // Multiple points can have the same coordinates.
 // You are also given an array queries where queries[j] = [xj, yj, rj] describes a circle centered at (xj, yj) with a
@@ -21,11 +19,11 @@
 //     1 <= rj <= 500
 //     All coordinates are integers.
 
-export const pointToCenter = function (point, query) {
+export function pointToCenter(point, query) {
     return Math.sqrt(Math.pow(query[0] - point[0], 2) + Math.pow(query[1] - point[1], 2))
 }
 
-export const isPointInside = function (point, query) {
+export function isPointInside(point, query) {
     const dist = pointToCenter(point, query)
     return dist <= query[2]
 }
@@ -37,13 +35,12 @@ export function isPointInsideCircleCounter(point: number[], query:number[], numb
     return numberOfPointsInside;
 }
 
-
 /**
  * @param {number[][]} points
  * @param {number[][]} queries
  * @return {number[]}
  */
-export const countPoints = function(points, queries) {
+export function countPoints(points, queries) {
     let listOfNumberPointsInside = []
     let queryIndex = 0
 
@@ -60,5 +57,4 @@ export const countPoints = function(points, queries) {
         queryIndex ++
     }
     return listOfNumberPointsInside
-};
-
+}
