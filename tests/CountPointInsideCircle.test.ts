@@ -1,5 +1,4 @@
-// const CountPointsInsideCircle = require('../Searching/CountPointsInsideCircle');
-import {pointToCenter, countPoints, isPointInside, isPointInsideCircleCounter} from "../Searching/CountPointsInsideCircle";
+import {pointToCenter, countPoints, isPointInside, isPointInsideCircleCounter} from "../Pointer/CountPointsInsideCircle";
 
 test('Test point to center of circle distance', () => {
     expect(pointToCenter([1, 1], [1, 2, 2])).toEqual(1);
