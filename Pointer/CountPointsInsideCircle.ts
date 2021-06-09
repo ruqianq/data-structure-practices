@@ -28,7 +28,7 @@ export function isPointInside(point, query) {
     return dist <= query[2]
 }
 
-export function isPointInsideCircleCounter(point: number[], query:number[], numberOfPointsInside: number) {
+export function isPointInsideCircleCounter(point: number[], query: number[], numberOfPointsInside: number) {
     if (isPointInside(point, query)) {
         numberOfPointsInside++
     }
@@ -50,11 +50,11 @@ export function countPoints(points, queries) {
 
         while (pointIndex < points.length) {
             numberOfPointsInside = isPointInsideCircleCounter(points[pointIndex], queries[queryIndex], numberOfPointsInside);
-            pointIndex ++
+            pointIndex++
         }
 
         listOfNumberPointsInside.push(numberOfPointsInside)
-        queryIndex ++
+        queryIndex++
     }
     return listOfNumberPointsInside
 }
