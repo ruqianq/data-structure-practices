@@ -25,10 +25,18 @@ export const pointToCenter = function (point, query) {
     return Math.sqrt(Math.pow(query[0] - point[0], 2) + Math.pow(query[1] - point[1], 2))
 }
 
-export const pointIsInsideCircle = function (point, query) {
+export const isPointInside = function (point, query) {
     const dist = pointToCenter(point, query)
     return dist <= query[2]
 }
+
+export function isPointInsideCircleCounter(point: number[], query:number[], numberOfPointsInside: number) {
+    if (isPointInside(point, query)) {
+        numberOfPointsInside++
+    }
+    return numberOfPointsInside;
+}
+
 
 /**
  * @param {number[][]} points
@@ -36,20 +44,21 @@ export const pointIsInsideCircle = function (point, query) {
  * @return {number[]}
  */
 export const countPoints = function(points, queries) {
-    let numberOfCircleCounts = []
+    let listOfNumberPointsInside = []
     let queryIndex = 0
+
     while (queryIndex < queries.length) {
         let pointIndex = 0
-        let counter = 0
+        let numberOfPointsInside = 0
+
         while (pointIndex < points.length) {
-            if (pointIsInsideCircle(points[pointIndex], queries[queryIndex])) {
-                counter ++
-            }
+            numberOfPointsInside = isPointInsideCircleCounter(points[pointIndex], queries[queryIndex], numberOfPointsInside);
             pointIndex ++
         }
-        numberOfCircleCounts.push(counter)
+
+        listOfNumberPointsInside.push(numberOfPointsInside)
         queryIndex ++
     }
-    return numberOfCircleCounts
+    return listOfNumberPointsInside
 };
 
