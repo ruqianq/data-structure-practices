@@ -27,7 +27,7 @@ export const pointToCenter = function (point, query) {
 
 export const pointIsInsideCircle = function (point, query) {
     const dist = pointToCenter(point, query)
-    return dist < query[2]
+    return dist <= query[2]
 }
 
 /**
