@@ -21,20 +21,13 @@
 //     1 <= rj <= 500
 //     All coordinates are integers.
 
-export const circleBoundaryCalculator = function (query) {
-    const xLeftmostPoint = query[0] - query[2]
-    const xRightmostPoint = query[0] + query[2]
-    const yTopPoint = query[1] + query[2]
-    const yLowPoint = query[1] - query[2]
-    return [xLeftmostPoint, xRightmostPoint, yTopPoint, yLowPoint]
+export const pointToCenter = function (point, query) {
+    return Math.sqrt(Math.pow(query[0] - point[0], 2) + Math.pow(query[1] - point[1], 2))
 }
 
 export const pointIsInsideCircle = function (point, query) {
-    const boundaries = circleBoundaryCalculator(query)
-    return !(point[0] > boundaries[1]
-        || point[0] < boundaries[0]
-        || point[1] > boundaries[2]
-        || point[1] < boundaries[3]);
+    const dist = pointToCenter(point, query)
+    return dist < query[2]
 }
 
 /**
@@ -60,7 +53,3 @@ export const countPoints = function(points, queries) {
     return numberOfCircleCounts
 };
 
-//
-// module.exports.countPoints = countPoints;
-// module.exports.circleBoundaryCalculator = circleBoundaryCalculator;
-// module.exports.pointIsInsideCircle = pointIsInsideCircle;

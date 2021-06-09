@@ -1,13 +1,13 @@
 // const CountPointsInsideCircle = require('../Searching/CountPointsInsideCircle');
-import {circleBoundaryCalculator, countPoints, pointIsInsideCircle} from "../Searching/CountPointsInsideCircle";
+import {pointToCenter, countPoints, pointIsInsideCircle} from "../Searching/CountPointsInsideCircle";
 
 test('Test circle boundary calculator', () => {
-    expect(circleBoundaryCalculator([1, 2, 3]))
-        .toEqual([-2, 4, 5, -1]);
+    expect(pointToCenter([1, 1], [1, 2, 2]))
+        .toEqual(1);
 });
 
 test('Test the point out of boundary', () => {
-    expect(pointIsInsideCircle([7, 8], [1, 2, 3]))
+    expect(pointIsInsideCircle([3,3], [1,2,2]))
         .toBe(false);
 });
 
