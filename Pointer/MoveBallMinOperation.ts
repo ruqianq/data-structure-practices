@@ -22,7 +22,6 @@ export function convertStringToArray(boxes) {
 }
 
 export function noBallInAnyBoxes(boxesArray) {
-    if (boxesArray.indexOf('1') == -1)
     return Array(boxesArray.length).fill(0)
 }
 
@@ -36,6 +35,8 @@ export function minOperations(boxes) {
     if (boxesArray.length == 1) {
         return oneBoxWillReturnZero()
     }
+    if (boxesArray.indexOf('1') == -1) {
+        return noBallInAnyBoxes(boxesArray)
+    }
     return counters
-
 }

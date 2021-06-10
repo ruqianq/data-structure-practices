@@ -19,3 +19,4 @@ test('Test if there are not one box return counter array', () => {
 test('Test if there is no ball in any boxes', () => {
     expect(noBallInAnyBoxes(['0', '0', '0'])).toEqual([0, 0, 0])
 })
+
