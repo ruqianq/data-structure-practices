@@ -1,4 +1,4 @@
-import {convertStringToArray, minOperations, oneBoxWillReturnZero} from "../Pointer/MoveBallMinOperation";
+import {convertStringToArray, minOperations, oneBoxWillReturnZero, noBallInAnyBoxes} from "../Pointer/MoveBallMinOperation";
 
 test('Test One box will return 0', () => {
     expect(oneBoxWillReturnZero()).toEqual([0]);
@@ -15,3 +15,7 @@ test('Test one box the minOperation is 0', () => {
 test('Test if there are not one box return counter array', () => {
     expect(minOperations('1')).toEqual([0]);
 });
+
+test('Test if there is no ball in any boxes', () => {
+    expect(noBallInAnyBoxes(['0', '0', '0'])).toEqual([0, 0, 0])
+})

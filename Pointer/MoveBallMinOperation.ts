@@ -20,6 +20,12 @@ export function oneBoxWillReturnZero() {
 export function convertStringToArray(boxes) {
     return boxes.split('')
 }
+
+export function noBallInAnyBoxes(boxesArray) {
+    if (boxesArray.indexOf('1') == -1)
+    return Array(boxesArray.length).fill(0)
+}
+
 /**
  * @param {string} boxes
  * @return {number[]}
