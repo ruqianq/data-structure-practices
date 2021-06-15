@@ -25,6 +25,11 @@ export function noBallInAnyBoxes(boxesArray) {
     return Array(boxesArray.length).fill(0)
 }
 
+export function getOperationWhenAllBoxHasBall(lengthOfArray) {
+    let listOfJumps = []
+    return listOfJumps
+}
+
 /**
  * @param {string} boxes
  * @return {number[]}
