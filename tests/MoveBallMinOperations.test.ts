@@ -1,5 +1,5 @@
 import {convertStringToArray, minOperations, oneBoxWillReturnZero, noBallInAnyBoxes,
-    getOperationWhenAllBoxHasBall, isOddOrEven} from "../Pointer/MoveBallMinOperation";
+    isLengthOfArrayEven, jumpCalculatorByIdx} from "../Pointer/MoveBallMinOperation";
 
 test('Test One box will return 0', () => {
     expect(oneBoxWillReturnZero()).toEqual([0]);
@@ -22,14 +22,18 @@ test('Test if there is no ball in any boxes', () => {
 })
 
 test('Test check the length is odd or even', () => {
-    expect(isOddOrEven(2)).toEqual(true)
+    expect(isLengthOfArrayEven(2)).toEqual(true)
+})
+
+test('Test check the length is odd or even', () => {
+    expect(jumpCalculatorByIdx(2, 1, [1, 1])).toEqual(1)
 })
 
 test('Test get the operation of all box has ball length equal var', () => {
-    expect(getOperationWhenAllBoxHasBall(2).length).toEqual(2)
+    expect(minOperations('2').length).toEqual(2)
 })
 
 test('Test get the operation of all box has ball', () => {
-    expect(getOperationWhenAllBoxHasBall(3)).toEqual([3, 2, 3])
+    expect(minOperations(3)).toEqual([3, 2, 3])
 })
 

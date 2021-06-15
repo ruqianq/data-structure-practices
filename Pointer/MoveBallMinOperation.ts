@@ -25,21 +25,14 @@ export function noBallInAnyBoxes(boxesArray) {
     return Array(boxesArray.length).fill(0)
 }
 
-export function isOddOrEven(lengthOfArray) {
+export function isLengthOfArrayEven(lengthOfArray) {
     if (lengthOfArray % 2 == 0) {
         return true
     }
 }
 
-export function getOperationWhenAllBoxHasBall(lengthOfArray) {
-    let i = 0
-    let result = []
-    while (i <= lengthOfArray/2 - 1) {
-        result.push((lengthOfArray - i) * ((lengthOfArray - i) + 1) / 2)
-        i ++
-    }
-
-    return result
+export function jumpCalculatorByIdx(lengthOfArray, i: number, boxesArray) {
+    return ((lengthOfArray - i) * ((lengthOfArray - i) + 1) / 2) * boxesArray[i];
 }
 
 /**
@@ -49,11 +42,22 @@ export function getOperationWhenAllBoxHasBall(lengthOfArray) {
 export function minOperations(boxes) {
     let counters = []
     const boxesArray = convertStringToArray(boxes)
-    if (boxesArray.length == 1) {
+    const lengthOfArray = boxesArray.length
+    if (lengthOfArray == 1) {
         return oneBoxWillReturnZero()
     }
     if (boxesArray.indexOf('1') == -1) {
         return noBallInAnyBoxes(boxesArray)
     }
+    let i = 0
+    if (isLengthOfArrayEven(lengthOfArray)) {
+        return []
+    }
+    while (i <= Math.round(lengthOfArray)) {
+        counters.push(jumpCalculatorByIdx(lengthOfArray, i, boxesArray))
+        i ++
+    }
+
+
     return counters
 }
