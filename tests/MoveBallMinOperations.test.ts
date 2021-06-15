@@ -34,6 +34,6 @@ test('Test get the operation of all box has ball length equal var', () => {
 })
 
 test('Test get the operation of all box has ball', () => {
-    expect(minOperations(3)).toEqual([3, 2, 3])
+    expect(minOperations('3')).toEqual([3, 2, 3])
 })
 
