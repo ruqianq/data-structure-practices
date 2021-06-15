@@ -25,9 +25,21 @@ export function noBallInAnyBoxes(boxesArray) {
     return Array(boxesArray.length).fill(0)
 }
 
+export function isOddOrEven(lengthOfArray) {
+    if (lengthOfArray % 2 == 0) {
+        return true
+    }
+}
+
 export function getOperationWhenAllBoxHasBall(lengthOfArray) {
-    let listOfJumps = []
-    return listOfJumps
+    let i = 0
+    let result = []
+    while (i <= lengthOfArray/2 - 1) {
+        result.push((lengthOfArray - i) * ((lengthOfArray - i) + 1) / 2)
+        i ++
+    }
+
+    return result
 }
 
 /**
