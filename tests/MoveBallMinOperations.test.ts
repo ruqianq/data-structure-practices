@@ -1,12 +1,14 @@
-import {convertStringToArray, minOperations, oneBoxWillReturnZero, noBallInAnyBoxes,
-    isLengthOfArrayEven, jumpCalculatorByIdx} from "../Pointer/MoveBallMinOperation";
+import {
+    convertStringToArray, minOperations, oneBoxWillReturnZero, noBallInAnyBoxes,
+    isLengthOfArrayEven, jumpCalculatorByIdx, oddArrayParser, evenArrayParser
+} from "../Pointer/MoveBallMinOperation";
 
 test('Test One box will return 0', () => {
     expect(oneBoxWillReturnZero()).toEqual([0]);
 });
 
 test('Test utl function that convert string into array', () => {
-    expect(convertStringToArray('101')).toEqual(['1', '0', '1']);
+    expect(convertStringToArray('101')).toEqual([1, 0, 1]);
 });
 
 test('Test one box the minOperation is 0', () => {
@@ -25,15 +27,19 @@ test('Test check the length is odd or even', () => {
     expect(isLengthOfArrayEven(2)).toEqual(true)
 })
 
-test('Test check the length is odd or even', () => {
-    expect(jumpCalculatorByIdx(2, 1, [1, 1])).toEqual(1)
+test('Test the calculator', () => {
+    expect(jumpCalculatorByIdx(5, 2, [1, 1, 1, 1, 1])).toEqual(6)
 })
 
-test('Test get the operation of all box has ball length equal var', () => {
-    expect(minOperations('2').length).toEqual(2)
+test('Test odd array creator', () => {
+    expect(oddArrayParser(0, 3, [], [1, 1, 1])).toEqual([3, 2, 3])
+})
+
+test('Test even array creator', () => {
+    expect(evenArrayParser(0, 4, [], [1, 1, 1])).toEqual([6, 4, 4, 6])
 })
 
 test('Test get the operation of all box has ball', () => {
-    expect(minOperations('3')).toEqual([3, 2, 3])
+    expect(minOperations('111')).toEqual([3, 2, 3])
 })
 
