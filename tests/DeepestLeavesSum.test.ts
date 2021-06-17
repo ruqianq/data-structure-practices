@@ -17,5 +17,5 @@ test('If only has root, return the root value', () => {
 })
 
 test('If more nodes return sum', () => {
-    expect(deepestLeavesSum(moreNode)).toEqual(16)
+    expect(deepestLeavesSum(moreNode)).toEqual(7)
 })
