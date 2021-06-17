@@ -1,3 +1,6 @@
+// You are giving a list of boxes that contain ball. Return the number of how many operation needed to move all the
+// ball to one box
+
 export function oneBoxWillReturnZero() {
     return [0]
 }
