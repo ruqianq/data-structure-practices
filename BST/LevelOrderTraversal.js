@@ -2,7 +2,7 @@
 // Node values for all levels should be displayed on separate lines. Let’s take a look at the below binary tree.
 
 import { BinarySearchTree } from "./BinerySearchTree";
-import { Node } from "./BinerySearchTree";
+import {Node} from "./Node";
 
 let test1 = new BinarySearchTree()
 test1.insert(10)

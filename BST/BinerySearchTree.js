@@ -1,10 +1,4 @@
-export class Node {
-    constructor(val) {
-        this.value = val;
-        this.left = null;
-        this.right = null;
-    }
-}
+import {Node} from "./Node";
 
 export class BinarySearchTree {
     constructor() {
