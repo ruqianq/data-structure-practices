@@ -19,9 +19,22 @@ export function isTheDeepestNode(node: Node) {
  * @return {number}
  */
 export function deepestLeavesSum(root: Node) {
-    let data = []
+    let sum = 0
     let cur = root
     if (isTheDeepestNode(root)) {
         return root.value
     }
+    function helper(node) {
+        if (node.left) {
+            helper(node.left)
+        }
+        if (node.right) {
+            helper(node.right)
+        }
+        if (isTheDeepestNode(node)) {
+            sum += node.value
+        }
+    }
+    helper(cur)
+    return sum
 }
