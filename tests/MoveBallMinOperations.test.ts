@@ -1,14 +1,10 @@
 import {
-    convertStringToArray, minOperations, oneBoxWillReturnZero, noBallInAnyBoxes,
+    minOperations, oneBoxWillReturnZero, noBallInAnyBoxes,
     isLengthOfArrayEven, jumpCalculatorByIdx, oddArrayParser, evenArrayParser
 } from "../Pointer/MoveBallMinOperation";
 
 test('Test One box will return 0', () => {
     expect(oneBoxWillReturnZero()).toEqual([0]);
-});
-
-test('Test utl function that convert string into array', () => {
-    expect(convertStringToArray('101')).toEqual([1, 0, 1]);
 });
 
 test('Test one box the minOperation is 0', () => {

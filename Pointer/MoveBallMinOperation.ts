@@ -1,12 +1,10 @@
 // You are giving a list of boxes that contain ball. Return the number of how many operation needed to move all the
 // ball to one box
 
+import {convertNumberStringToArrayOfInt} from "../Util/Util";
+
 export function oneBoxWillReturnZero() {
     return [0]
-}
-
-export function convertStringToArray(boxes) {
-    return boxes.split('').map(i => parseInt(i))
 }
 
 export function noBallInAnyBoxes(boxesArray) {
@@ -55,7 +53,7 @@ export function evenArrayParser(i: number, lengthOfArray, counters: any[], boxes
  */
 export function minOperations(boxes) {
     let counters = []
-    const boxesArray = convertStringToArray(boxes)
+    const boxesArray = convertNumberStringToArrayOfInt(boxes)
     const lengthOfArray = boxesArray.length
     if (lengthOfArray == 1) {
         return oneBoxWillReturnZero()
