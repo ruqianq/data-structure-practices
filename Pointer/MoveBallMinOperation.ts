@@ -63,7 +63,6 @@ export function minOperations(boxes) {
     if (boxesArray.indexOf(1) == -1) {
         return noBallInAnyBoxes(boxesArray)
     }
-    let i = 0
     if (isLengthOfArrayEven(lengthOfArray)) {
         return evenArrayParser(0, lengthOfArray, counters, boxesArray)
     }
