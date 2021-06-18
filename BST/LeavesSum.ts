@@ -1,6 +1,6 @@
+import { Node } from './Node'
 // Given the root of a binary tree,
 // return the sum of values of its leaves.
-import { Node } from './Node'
 
 export function isTheleaf(node: Node) {
     return !(node.left || node.right);
