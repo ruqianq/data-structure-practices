@@ -43,7 +43,7 @@ export function DeepestLeavesSum(root: Node) {
     if (isLeaf(root)) {
         return root.value
     }
-    const treeHeight = getTreeHeight(root, 1)
+    const treeHeight = getTreeHeight(root)
     function helper(node, depth) {
         if (node.left) {
             helper(node.left, depth + 1)

@@ -14,6 +14,15 @@ oneMoreNode.right = new Node(12)
 oneMoreNode.right.left = new Node(11)
 oneMoreNode.right.right = new Node(13)
 
+const anotherNode = new Node(1)
+anotherNode.left = new Node(2)
+anotherNode.right = new Node(3)
+anotherNode.left.left = new Node(4)
+anotherNode.left.left.left = new Node(7)
+anotherNode.left.right = new Node(5)
+anotherNode.right.right = new Node(6)
+anotherNode.right.right.right = new Node(8)
+
 test('Test the branch still have node', () => {
     expect(isLeaf(deepestNode)).toEqual(true)
 })
@@ -27,17 +36,25 @@ test('If more nodes return sum', () => {
 })
 
 test('Test the return 1 if cur is root', () => {
-    expect(getTreeHeight(deepestNode, 1)).toEqual(1)
+    expect(getTreeHeight(deepestNode)).toEqual(1)
 })
 
 test('Test the return of the binary tree layers', () => {
-    expect(getTreeHeight(moreNode, 1)).toEqual(3)
+    expect(getTreeHeight(moreNode)).toEqual(3)
 })
 
 test('More Test the return of the binary tree layers', () => {
-    expect(getTreeHeight(oneMoreNode, 1)).toEqual(3)
+    expect(getTreeHeight(oneMoreNode)).toEqual(3)
+})
+
+test('More Test the return of the binary tree layers', () => {
+    expect(getTreeHeight(anotherNode)).toEqual(4)
 })
 
 test('Test the deepestLeaveSum', () => {
     expect(DeepestLeavesSum(moreNode)).toEqual(7)
+})
+
+test('Test the deepestLeaveSum', () => {
+    expect(DeepestLeavesSum(anotherNode)).toEqual(15)
 })

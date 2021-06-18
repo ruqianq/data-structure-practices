@@ -2,6 +2,7 @@ export class Node {
     value: number
     left: Node
     right: Node
+
     constructor(val) {
         this.value = val;
         this.left = null;
@@ -9,16 +10,16 @@ export class Node {
     }
 }// Given the root of a binary tree,
 // return the sum of values of its deepest leaves.
-export function getTreeHeight(node: Node, startLayer) {
-    if (node.left == null && node.right == null)
-        return startLayer;
+export function getTreeHeight(node) {
+    if (node == null)
+        return 0;
+    else {
+        let lDepth = getTreeHeight(node.left);
+        let rDepth = getTreeHeight(node.right);
 
-    let leftHeight = getTreeHeight(node.left, startLayer + 1)
-    let rightHeight = getTreeHeight(node.right, startLayer + 1)
-
-    if (leftHeight > rightHeight) {
-        return leftHeight
-    } else {
-        return rightHeight
+        if (lDepth > rDepth)
+            return (lDepth + 1);
+        else
+            return (rDepth + 1);
     }
 }
