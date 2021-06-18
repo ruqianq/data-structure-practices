@@ -1,4 +1,4 @@
-import { isTheDeepestNode, deepestLeavesSum } from '../BST/DeepestLeavesSum'
+import { isTheleaf, leavesSum } from '../BST/LeavesSum'
 import { Node } from '../BST/Node'
 
 const deepestNode = new Node(1)
@@ -9,13 +9,13 @@ moreNode.left.left = new Node(1)
 moreNode.left.right = new Node(6)
 
 test('Test the branch still have node', () => {
-    expect(isTheDeepestNode(deepestNode)).toEqual(true)
+    expect(isTheleaf(deepestNode)).toEqual(true)
 })
 
 test('If only has root, return the root value', () => {
-    expect(deepestLeavesSum(deepestNode)).toEqual(1)
+    expect(leavesSum(deepestNode)).toEqual(1)
 })
 
 test('If more nodes return sum', () => {
-    expect(deepestLeavesSum(moreNode)).toEqual(7)
+    expect(leavesSum(moreNode)).toEqual(16)
 })

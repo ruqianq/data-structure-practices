@@ -1,8 +1,8 @@
 // Given the root of a binary tree,
-// return the sum of values of its deepest leaves.
+// return the sum of values of its leaves.
 import { Node } from './Node'
 
-export function isTheDeepestNode(node: Node) {
+export function isTheleaf(node: Node) {
     return !(node.left || node.right);
 }
 
@@ -18,10 +18,10 @@ export function isTheDeepestNode(node: Node) {
  * @param {Node} root
  * @return {number}
  */
-export function deepestLeavesSum(root: Node) {
+export function leavesSum(root: Node) {
     let sum = 0
     let cur = root
-    if (isTheDeepestNode(root)) {
+    if (isTheleaf(root)) {
         return root.value
     }
     function helper(node) {
@@ -31,7 +31,7 @@ export function deepestLeavesSum(root: Node) {
         if (node.right) {
             helper(node.right)
         }
-        if (isTheDeepestNode(node)) {
+        if (isTheleaf(node)) {
             sum += node.value
         }
     }
