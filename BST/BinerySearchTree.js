@@ -4,6 +4,7 @@ export class BinarySearchTree {
     constructor() {
         this.root = null
     }
+
     insert(val) {
         if (!this.root) {
             this.root = new Node(val)
@@ -11,11 +12,11 @@ export class BinarySearchTree {
         }
         let cur = this.root
         while (cur.right && cur.left) {
-        if (val > cur.value) {
-            cur = cur.right
-        } else {
-            cur = cur.left
-        }
+            if (val > cur.value) {
+                cur = cur.right
+            } else {
+                cur = cur.left
+            }
         }
         if (val > cur.value) {
             cur.right = new Node(val)
@@ -24,6 +25,7 @@ export class BinarySearchTree {
         }
         return this
     }
+
     find(val) {
         if (!this.root) {
             return false
@@ -41,15 +43,16 @@ export class BinarySearchTree {
         }
         if (!found) {
             return false
-            }
+        }
         return cur
     }
+
     bfs() {
         let data = [];
         let queue = [];
         let node = this.root
         queue.push(node)
-        while(queue.length){
+        while (queue.length) {
             node = queue.shift()
             data.push(node.value)
             if (node.left) {
@@ -62,9 +65,11 @@ export class BinarySearchTree {
         }
         return data
     }
-    dfs_pre(){
+
+    dfs_pre() {
         let data = [];
         let cur = this.root;
+
         function helper(node) {
             data.push(node.value)
             if (node.left) {
@@ -74,12 +79,15 @@ export class BinarySearchTree {
                 helper(node.right)
             }
         }
+
         helper(cur)
         return data
     }
-    dfs_post(){
+
+    dfs_post() {
         let data = [];
         let cur = this.root;
+
         function helper(node) {
             if (node.left) {
                 helper(node.left)
@@ -89,12 +97,15 @@ export class BinarySearchTree {
             }
             data.push(node.value)
         }
+
         helper(cur)
         return data
     }
+
     dfs_order() {
         let data = [];
         let cur = this.root;
+
         function helper(node) {
             if (node.left) {
                 helper(node.left)
@@ -104,17 +115,8 @@ export class BinarySearchTree {
                 helper(node.right)
             }
         }
+
         helper(cur)
         return data
     }
 }
-
-let test = new BinarySearchTree()
-test.insert(10)
-test.insert(15)
-test.insert(6)
-test.insert(20)
-test.insert(3)
-test.insert(13)
-test.insert(7)
-test.dfs_order()
