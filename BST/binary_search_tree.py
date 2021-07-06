@@ -38,4 +38,21 @@ class BinarySearchTree:
 
         return cur
 
+    def bfs(self):
+        data = []
+        queue = []
+        node = self.root
+        queue.append(node)
+
+        while queue:
+            node = queue.pop(0)
+            data.append(node.value)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+        return data
+
+
 
