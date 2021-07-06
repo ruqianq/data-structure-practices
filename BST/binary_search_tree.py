@@ -56,7 +56,8 @@ class BinarySearchTree:
 
     def dfs_pre(self):
         data = []
-        cur = self.root
+        if self.root is None:
+            return []
         def helper(node):
             data.append(node.value)
             if node.left:
@@ -64,8 +65,23 @@ class BinarySearchTree:
             if node.right:
                 helper(node.right)
 
-        helper(cur)
+        helper(self.root)
         return data
+
+    def dfs_post(self):
+        data = []
+        if self.root is None:
+            return []
+        def helper(node):
+            if node.left:
+                helper(node.left)
+            if node.right:
+                helper(node.right)
+
+            data.append(node.value)
+        helper(self.root)
+        return data
+
 
 
 
