@@ -18,5 +18,24 @@ class BinarySearchTree:
             cur.right = Node(value)
         else:
             cur.left = Node(value)
-
         return self
+
+    def find(self, value):
+        if not self.root:
+            return False
+
+        cur = self.root
+        found = False
+        while cur and found is True:
+            if value > cur.value:
+                cur = cur.right
+            elif value < cur.value:
+                cur = cur.left
+            else:
+                found = True
+        if found is False:
+            return False
+
+        return cur
+
+
