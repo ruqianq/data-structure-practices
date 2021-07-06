@@ -82,6 +82,21 @@ class BinarySearchTree:
         helper(self.root)
         return data
 
+    def dfs_order(self):
+        data = []
+        if self.root is None:
+            return []
+        def helper(node):
+            if node.left:
+                helper(node.left)
+            data.append(node.value)
+            if node.right:
+                helper(node.right)
+
+        helper(self.root)
+        return data
+
+
 
 
 
