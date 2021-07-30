@@ -45,7 +45,7 @@ class BinarySearchTree:
         node = self.root
         queue.append(node)
 
-        while queue:
+        while len(queue) > 0:
             node = queue.pop(0)
             data.append(node.value)
             if node.left:
@@ -59,6 +59,7 @@ class BinarySearchTree:
         data = []
         if self.root is None:
             return []
+
         def helper(node):
             data.append(node.value)
             if node.left:
@@ -73,6 +74,7 @@ class BinarySearchTree:
         data = []
         if self.root is None:
             return []
+
         def helper(node):
             if node.left:
                 helper(node.left)
@@ -87,6 +89,7 @@ class BinarySearchTree:
         data = []
         if self.root is None:
             return []
+
         def helper(node):
             if node.left:
                 helper(node.left)
