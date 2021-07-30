@@ -31,6 +31,4 @@ class SinglyLinkedList{
     this.length += 1
     return this
   }
-
-
 }
