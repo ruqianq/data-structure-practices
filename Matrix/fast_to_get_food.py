@@ -5,7 +5,7 @@
 # Output: [[0,0,0],[0,1,0],[0,0,0]]
 
 class Solution:
-    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+    def update_matrix(self, mat: List[List[int]]) -> List[List[int]]:
         visited = set()
         from collections import deque
         q = deque()
