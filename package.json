@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "jest": "^27.0.4"
+    "jest": "^30.4.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
